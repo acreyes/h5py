@@ -19,15 +19,17 @@ def get_requires_for_build_wheel(config_settings=None):
 
     # Set the environment variable H5PY_SETUP_REQUIRES=0 if we need to skip
     # these build requirements for any reason.
-    if os.getenv('HDF5_MPI') == 'ON' and os.getenv('H5PY_SETUP_REQUIRES') != '0':
-        requires.extend([
-            "mpi4py ==3.1.2; python_version=='3.10.*'",
-            "mpi4py ==3.1.4; python_version=='3.11.*'",
-            "mpi4py ==3.1.6; python_version=='3.12.*'",
-            "mpi4py ==4.0.1; python_version=='3.13.*'",
-            "mpi4py ==4.1.0; python_version=='3.14.*'",
-            # leave dependency unpinned for unstable Python versions
-            "mpi4py",
-        ])
+    if os.getenv("HDF5_MPI") == "ON" and os.getenv("H5PY_SETUP_REQUIRES") != "0":
+        requires.extend(
+            [
+                "mpi4py >=4.0.0; python_version=='3.10.*'",
+                "mpi4py >=4.0.0; python_version=='3.11.*'",
+                "mpi4py >=4.0.0; python_version=='3.12.*'",
+                "mpi4py >=4.0.1; python_version=='3.13.*'",
+                "mpi4py >=4.1.0; python_version=='3.14.*'",
+                # leave dependency unpinned for unstable Python versions
+                "mpi4py >=4.0.0",
+            ]
+        )
 
     return requires
