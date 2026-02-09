@@ -6,7 +6,7 @@ requires = [
     "numpy >=1.25.0, <3",
     "packaging >=23.0",
     "pkgconfig >=1.5.5",
-    "setuptools >=77.0.1",
+    "setuptools >=77.0.1<81",
 ]
 # use an in-tree build backend, extending setuptools.build_meta
 build-backend = "backend"
